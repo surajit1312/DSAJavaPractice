@@ -10,7 +10,7 @@ package com.dsa.array.easy;
  * 
  * Link: https://www.codingninjas.com/studio/problems/rotate-array_1230543
  */
-public class P5_Rotate_Array_Elements_Left_KTimes {
+public class P6_Rotate_Array_Elements_Left_KTimes {
 
 	/**
 	 * @param args
