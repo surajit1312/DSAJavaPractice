@@ -11,6 +11,7 @@ package com.dsa.binarysearch.easy;
  * 
  * Link: https://www.codingninjas.com/studio/problems/binary-search_972
  * 
+ * TC: O(log2 N)
  */
 public class P1_Binary_Search_Recursive {
 
