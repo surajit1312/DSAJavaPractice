@@ -4,7 +4,6 @@
 package com.dsa.tree.easy;
 
 import java.util.ArrayList;
-import java.util.List;
 
 class TreeNodeP3<T> {
 	T data;
