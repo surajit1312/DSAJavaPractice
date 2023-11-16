@@ -15,7 +15,7 @@ import java.util.Queue;
  * SC: O(2V) ~ O(V)
  * 
  */
-public class P2_Graph_Undirected_Cycle_Detection {
+public class P2_Graph_BFS_Undirected_Cycle_Detection {
 	/**
 	 * @param args
 	 * 
