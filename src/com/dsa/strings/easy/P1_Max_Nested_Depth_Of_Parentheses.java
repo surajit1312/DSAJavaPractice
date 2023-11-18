@@ -4,10 +4,17 @@
 package com.dsa.strings.easy;
 
 /**
- * CodingNinjas Link: https://www.codingninjas.com/studio/problems/maximum-nesting-depth-of-the-parentheses_8144741
+ * CodingNinjas 
  * 
- * TC: O(n)
- * SC: O(1)
+ * Link:
+ * https://www.codingninjas.com/studio/problems/maximum-nesting-depth-of-the-parentheses_8144741
+ * 
+ * LeetCode: 1614. Maximum Nesting Depth of the Parentheses 
+ * 
+ * Link:
+ * https://leetcode.com/problems/maximum-nesting-depth-of-the-parentheses/description/
+ * 
+ * TC: O(n) SC: O(1)
  */
 public class P1_Max_Nested_Depth_Of_Parentheses {
 
