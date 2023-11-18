@@ -10,12 +10,12 @@ import java.util.Stack;
 
 /**
  * 
- * CodingNinjas Link: https://www.codingninjas.com/studio/problems/topological-sorting_973003
+ * CodingNinjas Link:
+ * https://www.codingninjas.com/studio/problems/topological-sorting_973003
  * 
- * TC: O(V + E) 
- * SC: O(2V)
+ * TC: O(V + E) SC: O(2V)
  */
-public class P1_Graph_DAG_Topological_Sort {
+public class P1_Graph_DAG_Topological_Sort_Using_DFS_Kahns_Algorithm {
 
 	/**
 	 * @param args
@@ -29,19 +29,20 @@ public class P1_Graph_DAG_Topological_Sort {
 	}
 
 	private static List<Integer> topologicalSort(int[][] edges, int e, int v) {
-		ArrayList<ArrayList<Integer>> adj = new ArrayList<ArrayList<Integer>>();
+		ArrayList<ArrayList<Integer>> adjList = new ArrayList<ArrayList<Integer>>();
 		List<Integer> topoSortList = new ArrayList<Integer>();
 		for (int i = 0; i < v; i++) {
-			adj.add(new ArrayList<Integer>());
+			adjList.add(new ArrayList<Integer>());
 		}
-		for (int i = 0; i < e; i++) {
-			adj.get(edges[i][0]).add(edges[i][1]);
+		for (int i = 0; i < edges.length; i++) {
+			adjList.get(edges[i][0]).add(edges[i][1]);
 		}
-		boolean[] visited = new boolean[v];
 		Stack<Integer> st = new Stack<Integer>();
-		for (int i = 0; i < v; i++) {
+		boolean[] visited = new boolean[v];
+		Arrays.fill(visited, false);
+		for (int i = 0; i < visited.length; i++) {
 			if (!visited[i]) {
-				dfsGraph(i, adj, visited, st);
+				dfsGraphTopo(i, adjList, visited, st);
 			}
 		}
 		while (!st.isEmpty()) {
@@ -50,14 +51,15 @@ public class P1_Graph_DAG_Topological_Sort {
 		return topoSortList;
 	}
 
-	private static void dfsGraph(int current, ArrayList<ArrayList<Integer>> adj, boolean[] visited, Stack<Integer> st) {
+	private static void dfsGraphTopo(int current, ArrayList<ArrayList<Integer>> adjList, boolean[] visited,
+			Stack<Integer> st) {
 		visited[current] = true;
-		for (Integer adjItem : adj.get(current)) {
-			if (!visited[adjItem]) {
-				dfsGraph(adjItem, adj, visited, st);
+		for (int i = 0; i < adjList.get(current).size(); i++) {
+			if (!visited[adjList.get(current).get(i)]) {
+				dfsGraphTopo(adjList.get(current).get(i), adjList, visited, st);
 			}
 		}
-		st.push(current);
+		st.add(current);
 	}
 
 }
